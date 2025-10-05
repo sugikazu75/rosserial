@@ -258,9 +258,6 @@ class ArrayDataType(PrimitiveDataType):
                 f.write('          %s zero{};\n' % (self.type))
                 f.write('          memcpy(&(this->%s[i]), &zero, sizeof(%s));\n' % (self.name, self.type))
                 f.write('        }\n')
-            else:
-                # primitive
-                f.write('        ;\n')
 
             f.write('      }\n')
             f.write('      %s_length = %s_lengthT;\n' % (self.name, self.name))
